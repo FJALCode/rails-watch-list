@@ -1,0 +1,15 @@
+<div class="container">
+  <%= simple_form_for [@list, @bookmark] do |b| %>
+    <%= b.error_notification %>
+    <%= b.error_notification message: b.object.errors[:base].to_sentence if b.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= b.input :comment, label: 'Comentario de Pelicula', placeholder: 'Comentario' %>
+      <%= b.association :movie, prompt: 'Select a movie' %>
+    </div>
+    <div class="form-actions">
+      <%= b.submit "Agregar Comentario", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for @list do |l| %>
+    <%= l.error_notification %>
+    <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= l.input :name, label: 'List Name', placeholder: 'Nombre de la Lista' %>
+    </div>
+    <div class="form-actions">
+      <%= l.submit "Create List", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
