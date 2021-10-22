@@ -17,7 +17,11 @@
           <%# <div class="col m-4"> %>
           <%= link_to list do %>
             <div class="card bg-dark text-white" style="width: 18rem;">
-              <%= image_tag("https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80", class: "card-img", style:"opacity: 0.5" ) %>
+              <% if list.photo.attached? %>
+                <%= cl_image_tag list.photo.key, class: "card-img", crop: :fill %>
+              <% else %>
+                <%= image_tag("https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80", class: "card-img" ) %>
+              <% end %>
               <div class="card-img-overlay text-center">
                 <h3 class="card-title"><%= list.name %></h3>
               </div>
