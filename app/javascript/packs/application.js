@@ -10,7 +10,7 @@ require("channels")
 import 'bootstrap';
 // import { loadDynamicBannerText } from '../components/banner';
 import AOS from 'aos';
-import { initTyped } from './plugins/init_typedjs';
+import { loadDynamicBannerText } from './plugins/init_typedjs';
 import { initSelect2 } from './plugins/init_select2';
 import { initStarRating } from './plugins/init_star_rating';
 
@@ -18,10 +18,10 @@ document.addEventListener('turbolinks:load', () => {
     // Call your JS functions here
     // [...]
     initSelect2();
-    initTyped();
+    loadDynamicBannerText();
     AOS.init();
     initStarRating();
-    // loadDynamicBannerText();
+    
   });
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
